@@ -1,0 +1,26 @@
+<div class="container mb-3">
+    <div class="card">
+        <div class="card-header">
+          Sala de chat
+        </div>
+        <div class="card-body">
+          <div>
+            <h5>
+                Conversación
+            </h5>
+            <div>
+                @for (mensaje of mensajes; track $index) {
+                    <p>{{mensaje}}</p>
+                }                
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<div class="container">
+    <div class="row">
+        <app-mensaje-usuario class="col" [nombre]="'Pepe'" (enviarMensaje)="addMensajes($event)"></app-mensaje-usuario>
+        <app-mensaje-usuario class="col" [nombre]="'María'" (enviarMensaje)="addMensajes($event)"></app-mensaje-usuario>
+    </div>    
+</div>
+
